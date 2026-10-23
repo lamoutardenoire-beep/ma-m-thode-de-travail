@@ -39,7 +39,7 @@
 
         /* HEADER & HERO */
         header {
-            margin-bottom: 50px;
+            margin-bottom: 40px;
             text-align: left;
             border-bottom: 1px solid var(--card-border);
             padding-bottom: 30px;
@@ -61,6 +61,33 @@
             margin-bottom: 20px;
             letter-spacing: -0.02em;
             color: var(--text-main);
+        }
+
+        /* BIO SECTION */
+        .bio-section {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 45px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .bio-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 15px;
+        }
+
+        .bio-section p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            margin-bottom: 12px;
+        }
+
+        .bio-section p:last-child {
+            margin-bottom: 0;
         }
 
         .hero-intro {
@@ -299,9 +326,27 @@
             background: rgba(184, 149, 106, 0.1);
         }
 
+        /* DIRECT CONTACT FOOTER */
+        .direct-contact {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .direct-contact a {
+            color: var(--accent-copper);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .direct-contact a:hover {
+            text-decoration: underline;
+        }
+
         footer {
-            margin-top: 60px;
-            padding-top: 30px;
+            margin-top: 30px;
+            padding-top: 20px;
             border-top: 1px solid var(--card-border);
             text-align: center;
             color: var(--text-dim);
@@ -322,10 +367,14 @@
     <header>
         <div class="brand-subtitle">Audit de processus de vente · Miora Rasolofo · La Moutarde Noire</div>
         <h1>Comment je travaille</h1>
-        <p class="hero-intro">
-            Je regarde votre page comme le ferait un visiteur : je la parcours jusqu’en bas pour sentir sa longueur et son rythme, puis je remonte et je lis en détail.
-        </p>
     </header>
+
+    <!-- BIO / QUI REGARDE VOTRE PAGE -->
+    <div class="bio-section">
+        <div class="bio-title">Qui regarde votre page ?</div>
+        <p>Une passionnée. Dès que je tombe sur une page de vente, mon premier réflexe est de traquer les fuites et de relever ce qui fonctionne.</p>
+        <p>C’est une déformation professionnelle : je viens de l’audit financier, où l’on apprend à regarder ce qui ne tient pas. J’applique aujourd’hui le même regard à votre processus de vente.</p>
+    </div>
 
     <!-- SECTION 1 -->
     <div class="section">
@@ -423,6 +472,11 @@
                 <a href="https://calendly.com" target="_blank" class="btn btn-secondary">Réserver un créneau</a>
             </div>
         </div>
+    </div>
+
+    <!-- DIRECT CONTACT -->
+    <div class="direct-contact">
+        Une question avant de réserver ? Écrivez-moi directement sur <a href="https://www.linkedin.com" target="_blank">LinkedIn</a> ou par e-mail à <a href="mailto:votre-email@domain.com">votre-email@domain.com</a>.
     </div>
 
     <footer>
