@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comment je travaille — Miora Rasolofo | La Moutarde Noire</title>
+    <style>
+        :root {
+            --bg-color: #0b0d10;
+            --card-bg: #14181f;
+            --card-border: rgba(255, 255, 255, 0.08);
+            --accent-yellow: #f59e0b;
+            --accent-blue: #38bdf8;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --text-dim: #64748b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+        }
+
+        /* HEADER & HERO */
+        header {
+            margin-bottom: 50px;
+            text-align: left;
+            border-bottom: 1px solid var(--card-border);
+            padding-bottom: 30px;
+        }
+
+        .brand-subtitle {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--accent-yellow);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-intro {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            max-width: 720px;
+        }
+
+        /* SECTIONS */
+        .section {
+            margin-bottom: 45px;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* INTERACTIVE CHECKLIST */
+        .checklist-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 25px;
+            margin-top: 15px;
+        }
+
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            cursor: pointer;
+            user-select: none;
+            font-size: 1.05rem;
+            color: var(--text-main);
+        }
+
+        .checkbox-item input {
+            appearance: none;
+            width: 22px;
+            height: 22px;
+            border: 2px solid var(--text-dim);
+            border-radius: 4px;
+            outline: none;
+            cursor: pointer;
+            position: relative;
+            margin-top: 2px;
+            flex-shrink: 0;
+            transition: all 0.2s ease;
+        }
+
+        .checkbox-item input:checked {
+            background-color: var(--accent-yellow);
+            border-color: var(--accent-yellow);
+        }
+
+        .checkbox-item input:checked::after {
+            content: "✓";
+            position: absolute;
+            color: var(--bg-color);
+            font-weight: bold;
+            font-size: 14px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .checklist-note {
+            margin-top: 20px;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            font-style: italic;
+            border-top: 1px dashed var(--card-border);
+            padding-top: 15px;
+        }
+
+        /* DEPLIABLE (ACCORDEON) */
+        details.accordion {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 18px 22px;
+            margin-top: 15px;
+            transition: all 0.2s ease;
+        }
+
+        details.accordion[open] {
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        summary {
+            font-weight: 600;
+            font-size: 1.05rem;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--accent-blue);
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: "+";
+            font-size: 1.3rem;
+            transition: transform 0.2s;
+        }
+
+        details[open] summary::after {
+            content: "−";
+        }
+
+        .accordion-content {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid var(--card-border);
+            color: var(--text-muted);
+        }
+
+        .accordion-content ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .accordion-content li {
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .accordion-content li::before {
+            content: "–";
+            position: absolute;
+            left: 0;
+            color: var(--accent-yellow);
+        }
+
+        /* TEXT BLOCKS */
+        p.body-text {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            margin-bottom: 12px;
+        }
+
+        .highlight-box {
+            background: rgba(245, 158, 11, 0.05);
+            border-left: 3px solid var(--accent-yellow);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+            color: var(--text-main);
+        }
+
+        /* CALL TO ACTION CARDS */
+        .cta-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .cta-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: border-color 0.2s ease;
+        }
+
+        .cta-card:hover {
+            border-color: rgba(255, 255, 255, 0.25);
+        }
+
+        .cta-card h3 {
+            font-size: 1.15rem;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .cta-card p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .btn {
+            display: inline-block;
+            text-align: center;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary {
+            background: var(--accent-yellow);
+            color: var(--bg-color);
+        }
+
+        .btn-primary:hover {
+            background: #d97706;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-main);
+            border: 1px solid var(--card-border);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: var(--text-muted);
+        }
+
+        footer {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid var(--card-border);
+            text-align: center;
+            color: var(--text-dim);
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 640px) {
+            .cta-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <header>
+        <div class="brand-subtitle">Audit de processus de vente · Miora Rasolofo · La Moutarde Noire</div>
+        <h1>Comment je travaille</h1>
+        <p class="hero-intro">
+            Je regarde votre page comme le ferait un visiteur : je la parcours jusqu’en bas pour sentir sa longueur et son rythme, puis je remonte et je lis en détail.
+        </p>
+    </header>
+
+    <!-- SECTION 1 -->
+    <div class="section">
+        <div class="section-title">Sur le premier écran, je cherche trois réponses :</div>
+        
+        <div class="checklist-card">
+            <div class="checkbox-group">
+                <label class="checkbox-item">
+                    <input type="checkbox">
+                    <span>Est-ce pour moi ?</span>
+                </label>
+                <label class="checkbox-item">
+                    <input type="checkbox">
+                    <span>Cette offre répond-elle à mon problème ?</span>
+                </label>
+                <label class="checkbox-item">
+                    <input type="checkbox">
+                    <span>Pourquoi cela marcherait ici, alors que d’autres n’ont pas fonctionné ?</span>
+                </label>
+            </div>
+            <div class="checklist-note">
+                Cochez ce qui est clair sur votre propre page. Chaque case que vous ne pouvez pas cocher est un endroit où un visiteur peut décrocher.
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 2 -->
+    <div class="section">
+        <div class="section-title">Ensuite, je regarde le parcours</div>
+        <p class="body-text">
+            Chaque section lève-t-elle un doute avant qu’il ne naisse ? Sait-on toujours quoi faire ensuite ?
+        </p>
+
+        <details class="accordion">
+            <summary>Ce que je vois le plus souvent</summary>
+            <div class="accordion-content">
+                <ul>
+                    <li>Trop de portes d’entrée.</li>
+                    <li>Des témoignages en bloc, sans lien avec l’offre.</li>
+                    <li>Une justification qui arrive avant que le visiteur sache si l’offre le concerne.</li>
+                </ul>
+            </div>
+        </details>
+    </div>
+
+    <!-- SECTION 3 -->
+    <div class="section">
+        <div class="section-title">Je ne vous livre pas dix points</div>
+        <p class="body-text">
+            Je retiens les trois où vous perdez probablement le plus de monde, selon leur place dans le parcours, leur degré de blocage et la facilité à les corriger. « Probablement », car sans vos chiffres, je ne peux pas le prouver.
+        </p>
+    </div>
+
+    <!-- SECTION 4 -->
+    <div class="section">
+        <div class="section-title">Ce que vous recevez</div>
+        <p class="body-text">
+            Un PDF avec captures annotées : ce que je vois, pourquoi ça fait décrocher, ce que je changerais en premier. Pas de refonte, pas de promesse de chiffres, et jamais de travail sur votre page sans votre accord.
+        </p>
+    </div>
+
+    <!-- SECTION 5 -->
+    <div class="section">
+        <div class="section-title">Le tarif & la suite</div>
+        <p class="body-text">
+            <strong>Le tarif :</strong> Il dépend du nombre de pages et d’étapes de votre parcours. Je vous l’indique dès le premier échange, avant tout travail.
+        </p>
+        <p class="body-text">
+            <strong>Et après ?</strong> Si vous le souhaitez, je construis ensuite avec vous votre séquence d’e-mails, de la stratégie à la rédaction, ou je réécris votre page de vente dans votre ton, pour qu’elle parle directement à votre audience. Sur devis.
+        </p>
+
+        <div class="highlight-box">
+            Les outils m’aident à préparer. Mais c’est moi qui regarde votre page, qui relis chaque point et qui vous dis ce que j’en pense, vraiment.
+        </div>
+    </div>
+
+    <!-- SECTION CTA -->
+    <div class="section">
+        <div class="section-title">Deux façons de commencer</div>
+
+        <div class="cta-grid">
+            <div class="cta-card">
+                <div>
+                    <h3>Audit gratuit d’une page</h3>
+                    <p>Vous m’indiquez la page à regarder, je vous dis les trois endroits où vous perdez probablement le plus de monde, avec la direction à prendre. Places limitées, une par personne.</p>
+                </div>
+                <a href="https://calendly.com" target="_blank" class="btn btn-primary">Réserver mon audit gratuit</a>
+            </div>
+
+            <div class="cta-card">
+                <div>
+                    <h3>Appel de 15 minutes</h3>
+                    <p>Si vous savez déjà que vous voulez avancer, on regarde ensemble votre parcours et ce qui a du sens pour vous. Sans engagement.</p>
+                </div>
+                <a href="https://calendly.com" target="_blank" class="btn btn-secondary">Réserver un créneau</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        © La Moutarde Noire · Miora Rasolofo
+    </footer>
+
+</div>
+
+</body>
+</html>
