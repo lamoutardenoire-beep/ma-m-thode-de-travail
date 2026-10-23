@@ -102,13 +102,6 @@
             margin-bottom: 0;
         }
 
-        .hero-intro {
-            font-size: 1.3rem;
-            color: var(--text-muted);
-            max-width: 680px;
-            font-style: italic;
-        }
-
         /* SECTIONS */
         .section {
             margin-bottom: 45px;
@@ -258,6 +251,14 @@
             position: absolute;
             left: 0;
             color: var(--accent-copper);
+        }
+
+        /* LIGNE SUPPLÉMENTAIRE SOUS L'ACCORDÉON */
+        .accordion-footer-note {
+            margin-top: 15px;
+            font-style: italic;
+            color: var(--text-muted);
+            font-size: 1.15rem;
         }
 
         /* TEXT BLOCKS */
@@ -435,7 +436,8 @@
             Chaque section lève-t-elle un doute avant qu’il ne naisse ? Sait-on toujours quoi faire ensuite ?
         </p>
 
-        <details class="accordion">
+        <!-- OUVERT PAR DÉFAUT GRÂCE À 'open' -->
+        <details class="accordion" open>
             <summary>Ce que je vois le plus souvent</summary>
             <div class="accordion-content">
                 <ul>
@@ -445,6 +447,10 @@
                 </ul>
             </div>
         </details>
+        
+        <div class="accordion-footer-note">
+            Une page soignée visuellement, mais dont les mots ne disent pas à qui elle s’adresse ni pourquoi.
+        </div>
     </div>
 
     <!-- SECTION 3 -->
