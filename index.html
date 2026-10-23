@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comment je travaille — Miora Rasolofo | La Moutarde Noire</title>
+    
+    <!-- Importation des polices Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
     <style>
         :root {
             --bg-color: #1a1a18;
@@ -12,7 +18,7 @@
             --accent-copper: #b8956a;
             --accent-hover: #9c7c55;
             --text-main: #fdfdfd;
-            --text-muted: #b3b3b0;
+            --text-muted: #d1cbd5;
             --text-dim: #737370;
         }
 
@@ -20,13 +26,14 @@
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
 
         body {
             background-color: var(--bg-color);
             color: var(--text-main);
-            line-height: 1.7;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem; /* Taille augmentée pour compenser */
+            line-height: 1.6;
             padding: 50px 20px;
             display: flex;
             justify-content: center;
@@ -37,7 +44,7 @@
             width: 100%;
         }
 
-        /* HEADER & HERO */
+        /* HEADER & TITRES EN BARLOW CONDENSED */
         header {
             margin-bottom: 40px;
             text-align: left;
@@ -46,7 +53,8 @@
         }
 
         .brand-subtitle {
-            font-size: 0.85rem;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 1rem;
             text-transform: uppercase;
             letter-spacing: 2px;
             color: var(--accent-copper);
@@ -55,12 +63,14 @@
         }
 
         h1 {
-            font-size: clamp(2.2rem, 4vw, 3.2rem);
-            font-weight: 800;
-            line-height: 1.15;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 3.8rem);
+            font-weight: 700;
+            line-height: 1.1;
             margin-bottom: 20px;
-            letter-spacing: -0.02em;
+            letter-spacing: 0.5px;
             color: var(--text-main);
+            text-transform: uppercase;
         }
 
         /* BIO SECTION */
@@ -74,16 +84,18 @@
         }
 
         .bio-title {
-            font-size: 1.2rem;
-            font-weight: 700;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
             color: var(--text-main);
             margin-bottom: 15px;
+            text-transform: uppercase;
         }
 
         .bio-section p {
             color: var(--text-muted);
-            font-size: 1.05rem;
-            margin-bottom: 12px;
+            margin-bottom: 14px;
         }
 
         .bio-section p:last-child {
@@ -91,9 +103,10 @@
         }
 
         .hero-intro {
-            font-size: 1.15rem;
+            font-size: 1.3rem;
             color: var(--text-muted);
             max-width: 680px;
+            font-style: italic;
         }
 
         /* SECTIONS */
@@ -102,10 +115,13 @@
         }
 
         .section-title {
-            font-size: 1.2rem;
-            font-weight: 700;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
             color: var(--text-main);
             margin-bottom: 15px;
+            text-transform: uppercase;
             display: flex;
             align-items: center;
             gap: 10px;
@@ -132,7 +148,7 @@
             gap: 15px;
             cursor: pointer;
             user-select: none;
-            font-size: 1.05rem;
+            font-size: 1.2rem;
             color: var(--text-main);
         }
 
@@ -145,7 +161,7 @@
             outline: none;
             cursor: pointer;
             position: relative;
-            margin-top: 2px;
+            margin-top: 4px;
             flex-shrink: 0;
             transition: all 0.2s ease;
             background: var(--bg-color);
@@ -169,7 +185,7 @@
 
         .checklist-note {
             margin-top: 25px;
-            font-size: 0.95rem;
+            font-size: 1.1rem;
             color: var(--text-muted);
             font-style: italic;
             border-top: 1px dashed var(--card-border);
@@ -191,14 +207,17 @@
         }
 
         summary {
-            font-weight: 700;
-            font-size: 1.05rem;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 600;
+            font-size: 1.3rem;
+            letter-spacing: 0.5px;
             cursor: pointer;
             list-style: none;
             display: flex;
             justify-content: space-between;
             align-items: center;
             color: var(--accent-copper);
+            text-transform: uppercase;
         }
 
         summary::-webkit-details-marker {
@@ -207,7 +226,7 @@
 
         summary::after {
             content: "+";
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             transition: transform 0.2s;
         }
 
@@ -244,10 +263,10 @@
         /* TEXT BLOCKS */
         p.body-text {
             color: var(--text-muted);
-            font-size: 1.05rem;
             margin-bottom: 15px;
         }
 
+        /* CITATION / HIGHLIGHT BOX */
         .highlight-box {
             background: rgba(184, 149, 106, 0.08);
             border-left: 3px solid var(--accent-copper);
@@ -255,7 +274,7 @@
             border-radius: 0 12px 12px 0;
             margin: 25px 0;
             color: var(--text-main);
-            font-size: 1.05rem;
+            font-style: italic;
         }
 
         /* CTA CARDS */
@@ -284,26 +303,34 @@
         }
 
         .cta-card h3 {
-            font-size: 1.15rem;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
             margin-bottom: 12px;
             color: var(--text-main);
+            text-transform: uppercase;
         }
 
         .cta-card p {
-            font-size: 0.95rem;
+            font-size: 1.1rem;
             color: var(--text-muted);
             margin-bottom: 25px;
             flex-grow: 1;
         }
 
+        /* BOUTONS EN BARLOW CONDENSED */
         .btn {
+            font-family: 'Barlow Condensed', sans-serif;
             display: inline-block;
             text-align: center;
             padding: 14px 20px;
             border-radius: 10px;
-            font-weight: 700;
+            font-weight: 600;
+            font-size: 1.15rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
             text-decoration: none;
-            font-size: 0.95rem;
             transition: all 0.2s ease;
         }
 
@@ -330,7 +357,7 @@
         .direct-contact {
             margin-top: 40px;
             text-align: center;
-            font-size: 0.95rem;
+            font-size: 1.1rem;
             color: var(--text-muted);
         }
 
@@ -350,7 +377,7 @@
             border-top: 1px solid var(--card-border);
             text-align: center;
             color: var(--text-dim);
-            font-size: 0.85rem;
+            font-size: 0.95rem;
         }
 
         @media (max-width: 640px) {
