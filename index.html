@@ -6,14 +6,14 @@
     <title>Comment je travaille — Miora Rasolofo | La Moutarde Noire</title>
     <style>
         :root {
-            --bg-color: #0b0d10;
-            --card-bg: #14181f;
-            --card-border: rgba(255, 255, 255, 0.08);
-            --accent-yellow: #f59e0b;
-            --accent-blue: #38bdf8;
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --text-dim: #64748b;
+            --bg-color: #1a1a18;
+            --card-bg: #222220;
+            --card-border: rgba(184, 149, 106, 0.2);
+            --accent-copper: #b8956a;
+            --accent-hover: #9c7c55;
+            --text-main: #fdfdfd;
+            --text-muted: #b3b3b0;
+            --text-dim: #737370;
         }
 
         * {
@@ -26,14 +26,14 @@
         body {
             background-color: var(--bg-color);
             color: var(--text-main);
-            line-height: 1.6;
-            padding: 40px 20px;
+            line-height: 1.7;
+            padding: 50px 20px;
             display: flex;
             justify-content: center;
         }
 
         .container {
-            max-width: 800px;
+            max-width: 760px;
             width: 100%;
         }
 
@@ -48,24 +48,25 @@
         .brand-subtitle {
             font-size: 0.85rem;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: var(--accent-yellow);
-            font-weight: 600;
-            margin-bottom: 10px;
+            letter-spacing: 2px;
+            color: var(--accent-copper);
+            font-weight: 700;
+            margin-bottom: 12px;
         }
 
         h1 {
-            font-size: clamp(2rem, 4vw, 3rem);
+            font-size: clamp(2.2rem, 4vw, 3.2rem);
             font-weight: 800;
-            line-height: 1.2;
+            line-height: 1.15;
             margin-bottom: 20px;
             letter-spacing: -0.02em;
+            color: var(--text-main);
         }
 
         .hero-intro {
             font-size: 1.15rem;
             color: var(--text-muted);
-            max-width: 720px;
+            max-width: 680px;
         }
 
         /* SECTIONS */
@@ -74,7 +75,7 @@
         }
 
         .section-title {
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             font-weight: 700;
             color: var(--text-main);
             margin-bottom: 15px;
@@ -83,25 +84,25 @@
             gap: 10px;
         }
 
-        /* INTERACTIVE CHECKLIST */
+        /* CHECKLIST CARD */
         .checklist-card {
             background: var(--card-bg);
             border: 1px solid var(--card-border);
-            border-radius: 12px;
-            padding: 25px;
-            margin-top: 15px;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
 
         .checkbox-group {
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 18px;
         }
 
         .checkbox-item {
             display: flex;
             align-items: flex-start;
-            gap: 12px;
+            gap: 15px;
             cursor: pointer;
             user-select: none;
             font-size: 1.05rem;
@@ -110,21 +111,22 @@
 
         .checkbox-item input {
             appearance: none;
-            width: 22px;
-            height: 22px;
-            border: 2px solid var(--text-dim);
-            border-radius: 4px;
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--accent-copper);
+            border-radius: 6px;
             outline: none;
             cursor: pointer;
             position: relative;
             margin-top: 2px;
             flex-shrink: 0;
             transition: all 0.2s ease;
+            background: var(--bg-color);
         }
 
         .checkbox-item input:checked {
-            background-color: var(--accent-yellow);
-            border-color: var(--accent-yellow);
+            background-color: var(--accent-copper);
+            border-color: var(--accent-copper);
         }
 
         .checkbox-item input:checked::after {
@@ -139,37 +141,37 @@
         }
 
         .checklist-note {
-            margin-top: 20px;
+            margin-top: 25px;
             font-size: 0.95rem;
             color: var(--text-muted);
             font-style: italic;
             border-top: 1px dashed var(--card-border);
-            padding-top: 15px;
+            padding-top: 20px;
         }
 
-        /* DEPLIABLE (ACCORDEON) */
+        /* ACCORDION */
         details.accordion {
             background: var(--card-bg);
             border: 1px solid var(--card-border);
-            border-radius: 12px;
-            padding: 18px 22px;
-            margin-top: 15px;
+            border-radius: 16px;
+            padding: 20px 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             transition: all 0.2s ease;
         }
 
         details.accordion[open] {
-            border-color: rgba(255, 255, 255, 0.2);
+            border-color: var(--accent-copper);
         }
 
         summary {
-            font-weight: 600;
+            font-weight: 700;
             font-size: 1.05rem;
             cursor: pointer;
             list-style: none;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            color: var(--accent-blue);
+            color: var(--accent-copper);
         }
 
         summary::-webkit-details-marker {
@@ -178,7 +180,7 @@
 
         summary::after {
             content: "+";
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             transition: transform 0.2s;
         }
 
@@ -197,7 +199,7 @@
             list-style: none;
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 12px;
         }
 
         .accordion-content li {
@@ -209,26 +211,27 @@
             content: "–";
             position: absolute;
             left: 0;
-            color: var(--accent-yellow);
+            color: var(--accent-copper);
         }
 
         /* TEXT BLOCKS */
         p.body-text {
             color: var(--text-muted);
             font-size: 1.05rem;
-            margin-bottom: 12px;
+            margin-bottom: 15px;
         }
 
         .highlight-box {
-            background: rgba(245, 158, 11, 0.05);
-            border-left: 3px solid var(--accent-yellow);
-            padding: 15px 20px;
-            border-radius: 0 8px 8px 0;
-            margin: 20px 0;
+            background: rgba(184, 149, 106, 0.08);
+            border-left: 3px solid var(--accent-copper);
+            padding: 20px;
+            border-radius: 0 12px 12px 0;
+            margin: 25px 0;
             color: var(--text-main);
+            font-size: 1.05rem;
         }
 
-        /* CALL TO ACTION CARDS */
+        /* CTA CARDS */
         .cta-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -239,60 +242,61 @@
         .cta-card {
             background: var(--card-bg);
             border: 1px solid var(--card-border);
-            border-radius: 12px;
-            padding: 25px;
+            border-radius: 16px;
+            padding: 30px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            transition: border-color 0.2s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s ease, border-color 0.2s ease;
         }
 
         .cta-card:hover {
-            border-color: rgba(255, 255, 255, 0.25);
+            transform: translateY(-2px);
+            border-color: var(--accent-copper);
         }
 
         .cta-card h3 {
             font-size: 1.15rem;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             color: var(--text-main);
         }
 
         .cta-card p {
             font-size: 0.95rem;
             color: var(--text-muted);
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             flex-grow: 1;
         }
 
         .btn {
             display: inline-block;
             text-align: center;
-            padding: 12px 20px;
-            border-radius: 8px;
-            font-weight: 600;
+            padding: 14px 20px;
+            border-radius: 10px;
+            font-weight: 700;
             text-decoration: none;
             font-size: 0.95rem;
             transition: all 0.2s ease;
         }
 
         .btn-primary {
-            background: var(--accent-yellow);
+            background: var(--accent-copper);
             color: var(--bg-color);
         }
 
         .btn-primary:hover {
-            background: #d97706;
+            background: var(--accent-hover);
         }
 
         .btn-secondary {
             background: transparent;
             color: var(--text-main);
-            border: 1px solid var(--card-border);
+            border: 1px solid var(--accent-copper);
         }
 
         .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.05);
-            border-color: var(--text-muted);
+            background: rgba(184, 149, 106, 0.1);
         }
 
         footer {
@@ -422,7 +426,7 @@
     </div>
 
     <footer>
-        © La Moutarde Noire · Miora Rasolofo
+        © 2026 La Moutarde Noire · Miora Rasolofo
     </footer>
 
 </div>
