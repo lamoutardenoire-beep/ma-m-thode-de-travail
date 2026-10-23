@@ -32,7 +32,7 @@
             background-color: var(--bg-color);
             color: var(--text-main);
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.2rem; /* Taille augmentée pour compenser */
+            font-size: 1.2rem;
             line-height: 1.6;
             padding: 50px 20px;
             display: flex;
@@ -120,7 +120,7 @@
             gap: 10px;
         }
 
-        /* CHECKLIST CARD */
+        /* CHECKLIST CARD (IMBRIQUÉE COMME LES 3 PILIERS) */
         .checklist-card {
             background: var(--card-bg);
             border: 1px solid var(--card-border);
@@ -132,7 +132,7 @@
         .checkbox-group {
             display: flex;
             flex-direction: column;
-            gap: 18px;
+            gap: 0; /* Suppression des gros espaces pour créer une chaîne fluide */
         }
 
         .checkbox-item {
@@ -143,6 +143,18 @@
             user-select: none;
             font-size: 1.2rem;
             color: var(--text-main);
+            padding: 16px 0;
+            border-bottom: 1px solid rgba(184, 149, 106, 0.1);
+            transition: background 0.2s ease;
+        }
+
+        .checkbox-item:first-child {
+            padding-top: 0;
+        }
+
+        .checkbox-item:last-of-type {
+            border-bottom: none;
+            padding-bottom: 0;
         }
 
         .checkbox-item input {
@@ -253,7 +265,6 @@
             color: var(--accent-copper);
         }
 
-        /* LIGNE SUPPLÉMENTAIRE À L'INTÉRIEUR DU BLOC ACCORDÉON */
         .accordion-footer-note {
             margin-top: 15px;
             font-style: italic;
@@ -267,7 +278,7 @@
             margin-bottom: 15px;
         }
 
-        /* CITATION / HIGHLIGHT BOX */
+        /* HIGHLIGHT BOX */
         .highlight-box {
             background: rgba(184, 149, 106, 0.08);
             border-left: 3px solid var(--accent-copper);
@@ -404,7 +415,7 @@
         <p>C’est une déformation professionnelle : je viens de l’audit financier, où l’on apprend à regarder ce qui ne tient pas. J’applique aujourd’hui le même regard à votre processus de vente.</p>
     </div>
 
-    <!-- SECTION 1 -->
+    <!-- SECTION 1 : LES 3 POINTS INTERACTIFS IMBRIQUÉS -->
     <div class="section">
         <div class="section-title">Sur le premier écran, je cherche trois réponses :</div>
         
@@ -436,7 +447,6 @@
             Chaque section lève-t-elle un doute avant qu’il ne naisse ? Sait-on toujours quoi faire ensuite ?
         </p>
 
-        <!-- OUVERT PAR DÉFAUT + INTÉGRATION DE LA LIGNE FINALE DANS LE BLOC -->
         <details class="accordion" open>
             <summary>Ce que je vois le plus souvent</summary>
             <div class="accordion-content">
